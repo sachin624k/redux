@@ -108,3 +108,65 @@ Example Action:
   payload: "write code"
 }
 ```
+
+#### 🛠 Creating a Reducer
+
+Redux Toolkit automatically generates:
+- action creators
+- action types
+
+Reducer format:
+```js
+(state, action) => {
+   // update state
+}
+```
+#### 🧰 Mutation in Redux Toolkit
+
+Toolkit supports **mutating syntax** while staying immutable internally:
+```js
+state.todos.push(newTodo);   // direct mutation allowed
+```
+In vanilla Redux you must write:
+```js
+return [...todos, newTodo]
+```
+Toolkit makes reducer logic simpler.
+
+#### 🧩 Components Layer
+
+Components live in:
+```bash
+src/components/
+```
+Example:
+```bash
+Todo.jsx
+```
+
+#### 🏗 Providing the Store
+
+To connect React with Redux, wrap the app using `<Provider>`:
+```jsx
+import { Provider } from "react-redux";
+
+<Provider store={store}>
+  <Todo />
+</Provider>
+```
+
+#### 🎣 Access State in Components
+
+Once wrapped, components can read state using hooks.
+
+**useSelector**
+
+Used to read data from store:
+```js
+const todos = useSelector((state) => state.todos);
+```
+
+#### 🔄 Data Flow Summary
+```scss
+Component → Action → Reducer → Store → Component (via useSelector)
+```
