@@ -69,7 +69,7 @@ npm create vite@latest
 ```
 Name example:
 ```jsx
-redux-
+redux-class
 ```
 **Step-2:** Move into project
 ```jsx
