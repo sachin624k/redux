@@ -170,3 +170,34 @@ const todos = useSelector((state) => state.todos);
 ```scss
 Component → Action → Reducer → Store → Component (via useSelector)
 ```
+
+#### 🚀 Dispatching Actions (Triggering State Change)
+
+To update state in Redux, we **dispatch** actions.
+
+Redux Toolkit provides the useDispatch hook for sending actions to the store.
+
+**useDispatch**
+
+`useDispatch` allows components to send (`dispatch`) actions to reducers:
+```js
+const dispatch = useDispatch();
+dispatch(addTodo("Learn Redux")); 
+```
+The dispatched action flows through:
+```nginx
+Action → Reducer → Store
+```
+and updates the state.
+
+#### 📖 Selecting State From Store
+
+To read state values from the Redux store, we use the `useSelector` hook.
+
+**useSelector**
+
+`useSelector` extracts data from the store using selector logic:
+```js
+const todos = useSelector((state) => state.todos);
+```
+This returns the part of the state needed by the component.
